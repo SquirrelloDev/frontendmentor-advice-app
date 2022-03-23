@@ -1,0 +1,101 @@
+@use 'util' as *;
+
+.advice-box
+{
+    position: relative;
+    margin: 1em;
+    padding: 1.2em;
+    padding-bottom: 5em;
+    background-color: $dark-grayish-blue;
+    border-radius: 10px;
+    %typo
+    {
+        margin: 1em 0;
+        text-align: center;
+        font-weight: 800;
+    }
+    &__advice-number
+    {
+        @extend %typo;
+        font-size: $tiny;
+        color: $neon-green;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    &__advice
+    {
+      @extend %typo;
+      color: $light-cyan;
+      font-size: $quote;
+    }
+    &__divider
+    {
+        position: absolute;
+        left: 50%;
+        max-width: 90%;
+        transform: translateX(-50%);
+    }
+    &__randomize-btn
+    {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 60px;
+        height: 60px;
+        transform: translate(-50%, 50%);
+        padding: 1.2em;
+        border: none;
+        background-color: $neon-green;
+        border-radius: 50%;
+        transition: box-shadow .3s;
+        cursor: pointer;
+        // &:hover
+        // {
+           
+        // }
+        &:hover > .dice
+        {
+            transform: rotate(15deg);
+        }
+        
+    }
+}
+.hover:hover
+{
+    box-shadow: 0px 0px 30px $neon-green; 
+}
+.dice
+{
+    transition: transform .3s;
+}
+.r-roll
+{
+    animation: ready-roll 1s;
+}
+.roll
+{
+    animation: roll 2s;
+}
+@keyframes ready-roll
+{
+    from
+    {
+        transform: rotate(15deg);
+    }
+    to
+    {
+        transform: rotate(-15deg);
+    }
+}
+@keyframes roll
+{
+    from
+    {
+        transform: rotate(-15deg); 
+    }
+    to
+    {
+        transform: rotate(720deg);
+    }
+}
+@import './medium';

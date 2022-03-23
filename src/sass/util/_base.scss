@@ -1,0 +1,16 @@
+@use './fonts' as font;
+@use './colors' as *;
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.6rem;
+    font-family: font.$family, sans-serif;
+    background-color: $dark-blue;
+}
