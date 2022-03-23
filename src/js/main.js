@@ -2,6 +2,7 @@ const quote = document.querySelector('.advice-box__advice');
 const adviceNumber = document.querySelector('.advice-box__advice-number');
 const rollBtn = document.querySelector('.advice-box__randomize-btn');
 const dice = document.querySelector('.dice');
+const divider = document.querySelector('.advice-box__divider')
 function randomAdvice()
 {
     fetch('https://api.adviceslip.com/advice')
@@ -12,7 +13,6 @@ function randomAdvice()
     })
 
 }
-// randomAdvice();
 const perform = () => {
     rollBtn.classList.remove('hover');
     dice.classList.add('r-roll');
@@ -25,4 +25,16 @@ const perform = () => {
     dice.classList.remove('roll');
     rollBtn.classList.add('hover');
 }
+const checkDivider = () => {
+    if(window.innerWidth >= 768)
+    {
+        divider.setAttribute('src', './src/img/pattern-divider-desktop.svg');
+    }
+    else
+    {
+        divider.setAttribute('src', './src/img/pattern-divider-mobile.svg');
+    }
+}
+checkDivider();
 rollBtn.addEventListener('click', perform);
+window.addEventListener('resize', checkDivider);
