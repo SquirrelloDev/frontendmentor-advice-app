@@ -26,14 +26,7 @@ const perform = () => {
     rollBtn.classList.add('hover');
 }
 const checkDivider = () => {
-    if(window.innerWidth >= 768)
-    {
-        divider.setAttribute('src', './src/img/pattern-divider-desktop.svg');
-    }
-    else
-    {
-        divider.setAttribute('src', './src/img/pattern-divider-mobile.svg');
-    }
+    divider.setAttribute('src', window.innerWidth >= 768 ? './src/img/pattern-divider-desktop.svg':'./src/img/pattern-divider-mobile.svg')
 }
 checkDivider();
 rollBtn.addEventListener('click', perform);

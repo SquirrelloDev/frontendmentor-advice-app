@@ -10,7 +10,7 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-size: 1.6rem;
+    font-size: font.$standard;
     font-family: font.$family, sans-serif;
     background-color: $dark-blue;
 }
